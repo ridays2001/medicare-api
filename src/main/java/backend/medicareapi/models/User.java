@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
 	@Id
 	@GeneratedValue
@@ -21,16 +21,22 @@ public class User {
 	private String username;
 
 	@NotBlank
-	private String phone_number;
-
-	@NotBlank
-	private String locality;
-
-	@NotBlank
 	private Date dob;
 
 	@NotBlank
-	private Integer pin_code;
+	private String password;
+
+	@NotBlank
+	private boolean verified;
+
+	@NotBlank
+	private String verificationCode;
+
+	@NotBlank
+	private boolean resetRequested;
+
+	@NotBlank
+	private String resetCode;
 
 	public User() {
 		super();
@@ -40,19 +46,23 @@ public class User {
 				String name,
 				String email,
 				String username,
-				String phone_number,
-				String locality,
 				Date dob,
-				Integer pin_code) {
+				String password,
+				boolean verified,
+				String verificationCode,
+				boolean resetRequested,
+				String resetCode) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.username = username;
-		this.phone_number = phone_number;
-		this.locality = locality;
 		this.dob = dob;
-		this.pin_code = pin_code;
+		this.password = password;
+		this.verified = verified;
+		this.verificationCode = verificationCode;
+		this.resetRequested = resetRequested;
+		this.resetCode = resetCode;
 	}
 
 	public Integer getId() {
@@ -83,31 +93,45 @@ public class User {
 		this.username = username;
 	}
 
-	public String getPhone_number() {
-		return phone_number;
-	}
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
-	}
-
-	public String getLocality() {
-		return locality;
-	}
-	public void setLocality(String locality) {
-		this.locality = locality;
-	}
-
-	public Integer getPin_code() {
-		return pin_code;
-	}
-	public void setPin_code(Integer pin_code) {
-		this.pin_code = pin_code;
-	}
-
 	public Date getDob() {
 		return dob;
 	}
 	public void setDob(Date dob) {
 		this.dob = dob;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean isVerified() {
+		return verified;
+	}
+	public void setVerified(boolean verified) {
+		this.verified = verified;
+	}
+
+	public String getVerificationCode() {
+		return verificationCode;
+	}
+	public void setVerificationCode(String verificationCode) {
+		this.verificationCode = verificationCode;
+	}
+
+	public String getResetCode() {
+		return resetCode;
+	}
+	public void setResetCode(String resetCode) {
+		this.resetCode = resetCode;
+	}
+
+	public boolean isResetRequested() {
+		return resetRequested;
+	}
+	public void setResetRequested(boolean resetRequested) {
+		this.resetRequested = resetRequested;
 	}
 }
