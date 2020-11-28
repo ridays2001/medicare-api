@@ -4,8 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "Practitioners")
-public class Practitioners {
+@Table(name = "Practitioner")
+public class Practitioner {
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -25,10 +25,10 @@ public class Practitioners {
 	@NotBlank
 	private Integer pin_code;
 
-	public Practitioners() {
+	public Practitioner() {
 		super();
 	}
-	public Practitioners(Integer id, String name, String speciality, String locality, String phone_number, Integer pin_code) {
+	public Practitioner(Integer id, String name, String speciality, String locality, String phone_number, Integer pin_code) {
 		super();
 		this.id = id;
 		this.name = name;
