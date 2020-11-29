@@ -32,7 +32,6 @@ public class Store {
 		this.name = name;
 		this.phone_number = phone_number;
 		this.locality = locality;
-		this.address = address;
 		this.pin_code = pin_code;
 	}
 
@@ -62,13 +61,6 @@ public class Store {
 	}
 	public void setLocality(String locality) {
 		this.locality = locality;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
 	}
 
 	public Integer getPin_code() {
