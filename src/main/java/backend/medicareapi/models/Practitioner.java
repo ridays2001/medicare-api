@@ -7,8 +7,8 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "Practitioner")
 public class Practitioner {
 	@Id
-	@GeneratedValue
-	private Integer practitionerId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
 	@NotBlank
 	private String name;
@@ -28,9 +28,9 @@ public class Practitioner {
 	public Practitioner() {
 		super();
 	}
-	public Practitioner(Integer practitionerId, String name, String speciality, String locality, String phone_number, Integer pin_code) {
+	public Practitioner(Integer id, String name, String speciality, String locality, String phone_number, Integer pin_code) {
 		super();
-		this.practitionerId = practitionerId;
+		this.id = id;
 		this.name = name;
 		this.speciality = speciality;
 		this.locality = locality;
@@ -38,11 +38,11 @@ public class Practitioner {
 		this.pin_code = pin_code;
 	}
 
-	public Integer getPractitionerId() {
-		return practitionerId;
+	public Integer getId() {
+		return id;
 	}
-	public void setPractitionerId(Integer id) {
-		this.practitionerId = id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

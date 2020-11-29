@@ -7,11 +7,14 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "Store")
 public class Store {
 	@Id
-	@GeneratedValue
-	private Integer storeId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
 	@NotBlank
 	private String name;
+
+	@NotBlank
+	private String website;
 
 	@NotBlank
 	private String phone_number;
@@ -26,20 +29,28 @@ public class Store {
 		super();
 	}
 
-	public Store(Integer storeId, String name, String phone_number, String locality, String address, Integer pin_code) {
+	public Store(
+			Integer id,
+			String name,
+			String phone_number,
+			String locality,
+			String website,
+			Integer pin_code
+	) {
 		super();
-		this.storeId = storeId;
+		this.id = id;
 		this.name = name;
 		this.phone_number = phone_number;
 		this.locality = locality;
 		this.pin_code = pin_code;
+		this.website = website;
 	}
 
-	public Integer getStoreId() {
-		return storeId;
+	public Integer getId() {
+		return id;
 	}
-	public void setStoreId(Integer id) {
-		this.storeId = id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -68,5 +79,12 @@ public class Store {
 	}
 	public void setPin_code(Integer pin_code) {
 		this.pin_code = pin_code;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 }

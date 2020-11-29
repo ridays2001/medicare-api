@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name = "user")
 public class User {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@NotBlank
