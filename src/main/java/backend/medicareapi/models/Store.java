@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 public class Store {
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Integer storeId;
 
 	@NotBlank
 	private String name;
@@ -20,18 +20,15 @@ public class Store {
 	private String locality;
 
 	@NotBlank
-	private String address;
-
-	@NotBlank
 	private Integer pin_code;
 
 	public Store() {
 		super();
 	}
 
-	public Store(Integer id, String name, String phone_number, String locality, String address, Integer pin_code) {
+	public Store(Integer storeId, String name, String phone_number, String locality, String address, Integer pin_code) {
 		super();
-		this.id = id;
+		this.storeId = storeId;
 		this.name = name;
 		this.phone_number = phone_number;
 		this.locality = locality;
@@ -39,11 +36,11 @@ public class Store {
 		this.pin_code = pin_code;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getStoreId() {
+		return storeId;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setStoreId(Integer id) {
+		this.storeId = id;
 	}
 
 	public String getName() {
